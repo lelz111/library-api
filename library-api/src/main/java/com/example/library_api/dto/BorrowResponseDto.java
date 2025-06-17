@@ -1,20 +1,18 @@
-package com.example.library_api.model;
+package com.example.library_api.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "borrows")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Borrow {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class BorrowResponseDto {
+
+    @JsonProperty("id")
     private Long id;
 
     @JsonProperty("book_id")
